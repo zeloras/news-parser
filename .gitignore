@@ -1,0 +1,8 @@
+.env
+.idea
+.vscode
+.DS_Store
+.specstory
+__pycache__/*
+*.pyc
+chroma-data/*

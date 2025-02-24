@@ -1,0 +1,68 @@
+<!-- Process Section -->
+<section id="processSection" class="app-container">
+    <div class="card shadow-sm">
+        <div class="card-header bg-white">
+            <h5 class="card-title mb-0">Process Web Content</h5>
+        </div>
+        <div class="card-body">
+            <form id="processForm" onsubmit="processUrls(event)">
+                <div class="mb-3">
+                    <label for="urls" class="form-label">Content URLs</label>
+                    <div class="input-group">
+                        <textarea class="form-control" id="urls" name="urls" rows="3" required
+                               placeholder="Enter URLs (one per line)"></textarea>
+                    </div>
+                </div>
+                <div class="text-end">
+                    <button type="submit" class="btn btn-primary btn-with-spinner">
+                        <span>Process</span>
+                        <div class="spinner-border spinner-border-sm loading-spinner" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </button>
+                </div>
+            </form>
+
+            <!-- Processing Results -->
+            <div id="results" class="mt-4" style="display: none;">
+                <h5 class="border-bottom pb-2">Processing Results</h5>
+                <div id="contentList"></div>
+            </div>
+
+            <!-- Content Template -->
+            <template id="contentTemplate">
+                <div class="content-result mb-4 border-bottom pb-3">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <h6 class="mb-1 content-title"></h6>
+                        <span class="reading-time">
+                            <i class="bi bi-clock"></i> 
+                            <span class="reading-time-value"></span> min read
+                        </span>
+                    </div>
+                    <a class="content-source source-link mb-2 d-block" href="#" target="_blank">
+                        <small class="text-muted"></small>
+                    </a>
+                    <div class="mb-2">
+                        <strong>Summary:</strong>
+                        <p class="content-summary mb-2"></p>
+                    </div>
+                    <div class="mb-2">
+                        <strong>Topics:</strong>
+                        <div class="content-topics"></div>
+                    </div>
+                    <div>
+                        <strong>Sentiment:</strong>
+                        <div class="content-sentiment">
+                            <i class="bi bi-emoji-smile sentiment-positive" style="display: none;"></i>
+                            <i class="bi bi-emoji-neutral sentiment-neutral" style="display: none;"></i>
+                            <i class="bi bi-emoji-frown sentiment-negative" style="display: none;"></i>
+                            <span class="sentiment-value"></span>
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <div id="error" class="alert alert-danger mt-4" style="display: none;"></div>
+        </div>
+    </div>
+</section> 

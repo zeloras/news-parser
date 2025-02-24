@@ -1,0 +1,27 @@
+<!-- Search Section -->
+<section id="searchSection" class="app-container" style="display: none;">
+    <div class="card shadow-sm">
+        <div class="card-header bg-white">
+            <h5 class="card-title mb-0">Search Articles</h5>
+        </div>
+        <div class="card-body">
+            <form id="searchForm" onsubmit="searchArticles(event)">
+                <div class="mb-3">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="searchQuery" required
+                               placeholder="Enter your search query">
+                        <button type="submit" class="btn btn-primary btn-with-spinner">
+                            <span>Search</span>
+                            <div class="spinner-border spinner-border-sm loading-spinner" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <div id="searchResults" class="search-results mt-4"></div>
+            <div id="searchError" class="alert alert-danger mt-4" style="display: none;"></div>
+        </div>
+    </div>
+</section> 

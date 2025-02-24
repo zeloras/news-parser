@@ -1,0 +1,7 @@
+[run]
+source = .
+omit =
+    tests/*
+    */__pycache__/*
+    */site-packages/*
+    __init__.py
